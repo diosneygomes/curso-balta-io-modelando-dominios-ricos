@@ -18,4 +18,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentContext.Domain\PaymentContext.Domain.csproj" />
+    <ProjectReference Include="..\PaymentContext.Shared\PaymentContext.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
