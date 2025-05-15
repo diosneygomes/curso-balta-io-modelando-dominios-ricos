@@ -10,6 +10,10 @@ namespace PaymentContext.Domain.ValuesObjects
         {
             FirstName = firstName;
             LastName = lastName;
+
+            if(string.IsNullOrWhiteSpace(FirstName))
+                AddNotification("","Nome inválido.");
+
         }
 
         public string FirstName { get; private set; }
