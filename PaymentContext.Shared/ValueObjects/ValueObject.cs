@@ -1,5 +1,8 @@
-using PaymentContext.Shared.Entities;
+﻿using Flunt.Notifications;
 
-namespace PaymentContext.Shared.ValueObjects {
-    public abstract class ValueObject : Notifiable<Notification>{}
+namespace PaymentContext.Shared.ValueObjects
+{
+    public class ValueObject : Notifiable<Notification>
+    {
+    }
 }

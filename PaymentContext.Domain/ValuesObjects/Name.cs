@@ -1,3 +1,4 @@
+using PaymentContext.Domain.ValuesObjects.Contracts;
 using PaymentContext.Shared.ValueObjects;
 
 namespace PaymentContext.Domain.ValuesObjects
@@ -11,8 +12,7 @@ namespace PaymentContext.Domain.ValuesObjects
             FirstName = firstName;
             LastName = lastName;
 
-            if(string.IsNullOrWhiteSpace(FirstName))
-                AddNotification("","Nome inválido.");
+            AddNotifications(new CreateNameContract(this));
 
         }
 
