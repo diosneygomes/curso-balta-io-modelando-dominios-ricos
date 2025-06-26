@@ -24,7 +24,7 @@ namespace PaymentContext.Domain.Entities
 
         public bool Active { get; private set; }
 
-        public IReadOnlyCollection<Payment> Payments { get; private set; }
+        public IReadOnlyCollection<Payment> Payments { get { return _payments.ToArray(); } }
 
         public void AddPayment(Payment payment)
         {

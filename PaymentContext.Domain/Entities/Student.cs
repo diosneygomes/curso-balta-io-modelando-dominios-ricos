@@ -1,4 +1,5 @@
 using PaymentContext.Domain.ValuesObjects;
+using PaymentContext.Domain.ValuesObjects.Contracts;
 using PaymentContext.Shared.Entities;
 
 namespace PaymentContext.Domain.Entities
@@ -38,12 +39,14 @@ namespace PaymentContext.Domain.Entities
 
             foreach (var sub in _subscription)
             {
-                if(sub.Active)
-                   hasSubscriptionActive = true;
+                if (sub.Active)
+                    hasSubscriptionActive = true;
             }
 
-            if (hasSubscriptionActive)
-                AddNotification("Student.Subscriptions","Você já tem uma assinatura ativa.");
+            AddNotifications(new CreateSubscriptionContract(subscription));
+
+            // if (hasSubscriptionActive)
+            //     AddNotification("Student.Subscriptions","VocÃª jÃ¡ tem uma assinatura ativa.");
 
         }
     }
